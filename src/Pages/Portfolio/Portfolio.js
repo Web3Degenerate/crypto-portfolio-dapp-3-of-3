@@ -59,6 +59,8 @@ function Portfolio() {
       <ChainSelector netWorth={netWorth} selectedChains={selectedChains} onSelectionChange={setSelectedChains}/>
         <Routes>
           <Route path="/" element={<AssetTable address={address} selectedChains={selectedChains} />} />
+          <Route path="/history" element={<HistoryTable address={address} selectedChains={selectedChains} />} />
+
         </Routes>
       
     </div>
