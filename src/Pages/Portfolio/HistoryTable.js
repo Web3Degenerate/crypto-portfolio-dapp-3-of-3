@@ -21,7 +21,11 @@ function HistoryTable( {address, selectedChains} ){
 
       return fetch(url, {headers})
       .then(data => {
-        console.log(data);
+        return data.json();
+      })
+      .then(json => {
+        console.log(json);
+        setHistory(json.result);
       })
     }
 
@@ -39,7 +43,12 @@ function HistoryTable( {address, selectedChains} ){
 
     return (
       <div>
-        History
+        {history?.map( (entry, index) => (
+          <>
+            <div>{entry.block_number}</div>
+            <div>{entry.summary}</div>
+          </>
+        ))}
       </div>
 
     )
