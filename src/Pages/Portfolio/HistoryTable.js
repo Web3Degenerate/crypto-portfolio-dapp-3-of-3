@@ -1,6 +1,7 @@
 // Created at (9:30): https://youtu.be/noNyHV9HPM8?si=bHgomK7oWjUWbtJC&t=570
 
 import React, {useEffect, useState } from 'react';
+import TableRow from './Components/TableRow';
 
 // function HistoryTable( {selectedChains, address} ){
 function HistoryTable( {address, selectedChains} ){
@@ -44,10 +45,11 @@ function HistoryTable( {address, selectedChains} ){
     return (
       <div>
         {history?.map( (entry, index) => (
-          <>
-            <div>{entry.block_number}</div>
-            <div>{entry.summary}</div>
-          </>
+          // <>
+          //   <div>{entry.block_number}</div>
+          //   <div>{entry.summary}</div>
+          // </>
+          <TableRow event={entry} index={index} />
         ))}
       </div>
 
